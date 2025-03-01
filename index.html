@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .rule-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.2s ease;
+        }
+
+        .rule-card:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            background: #3b82f6;
+            border-radius: 50%;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            color: #94a3b8;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .play-button {
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+            padding: 16px 32px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
+        }
+
+        .play-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 12px -1px rgba(59, 130, 246, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Blackjack</h1>
+            <p class="subtitle">Master the art of 21. Challenge the dealer in this classic casino game where strategy meets luck.</p>
+        </header>
+
+        <div class="rules-grid">
+            <div class="rule-card">
+                <h2>The Basics</h2>
+                <p>Beat the dealer by getting as close to 21 as possible without going over. Everyone starts with two cards, but only one of the dealer's cards is visible.</p>
+            </div>
+
+            <div class="rule-card">
+                <h2>Card Values</h2>
+                <ul>
+                    <li>Face cards (J, Q, K) = 10</li>
+                    <li>Aces = 1 or 11</li>
+                    <li>Number cards = Face value</li>
+                </ul>
+            </div>
+
+            <div class="rule-card">
+                <h2>Your Moves</h2>
+                <ul>
+                    <li>"Hit" to take another card</li>
+                    <li>"Stand" to keep your current hand</li>
+                    <li>Going over 21 means you bust</li>
+                </ul>
+            </div>
+
+            <div class="rule-card">
+                <h2>Dealer Rules</h2>
+                <ul>
+                    <li>Must hit on 16 or below</li>
+                    <li>Must stand on 17 or above</li>
+                    <li>Reveals hidden card after you stand</li>
+                </ul>
+            </div>
+        </div>
+
+        <a href="game.html" class="play-button">The House Always Wins</a>
+    </div>
+</body>
+</html> 
